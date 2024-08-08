@@ -11,11 +11,6 @@ public class GameManager : MonoBehaviour
     static public GameManager Instance;
     private int score;
 
-    [Header("Scene Switching")]
-    [SerializeField] Animator animator;
-    [SerializeField] Image fadeImage;
-    private int targetScene = 0;
-
     private void Awake()
     {
         if (!Instance)
@@ -31,38 +26,6 @@ public class GameManager : MonoBehaviour
         {
             DontDestroyOnLoad(gameObject);
         }
-    }
-    private void Start()
-    {
-        animator.SetBool("Switch", false);
-        fadeImage.raycastTarget = false;
-    }
-
-    /*================================================
-     * SCENE SWITCHING
-     * ===============================================*/
-
-    public void ChangeScene(int index)
-    {
-        StartCoroutine(FadeSceneBack());
-        targetScene = index;
-        animator.SetBool("Switch", true);
-        fadeImage.raycastTarget = true;
-        SceneManager.LoadScene(targetScene);
-    }
-    IEnumerator FadeSceneBack()
-    {
-        while (IsTargetScene())
-        {
-            yield return new WaitUntil(IsTargetScene);
-        }
-        yield return new WaitForSeconds(0.5f);
-        fadeImage.raycastTarget = false;
-        animator.SetBool("Switch", false);
-    }
-    private bool IsTargetScene()
-    {
-        return SceneManager.GetActiveScene().buildIndex != targetScene;
     }
 
     /*================================================
