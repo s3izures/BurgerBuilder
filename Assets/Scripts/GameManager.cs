@@ -28,6 +28,30 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        //Generate order and random ingredient
+        OrderGenerator.Instance.GenerateRandomOrder();
+        IngredientSpawner.Instance.GenerateRandomIngredient();
+    }
+    private void Update()
+    {
+        if (Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(0);
+
+            if (GestureManager.Instance.OnSwipe(touch))
+            {
+                OrderGenerator.Instance.ClearOrder();
+                OrderGenerator.Instance.GenerateRandomOrder();
+            }
+            else if (GestureManager.Instance.OnTap(touch))
+            {
+
+            }
+        }
+    }
+
     /*================================================
      * SCORE
      * ===============================================*/

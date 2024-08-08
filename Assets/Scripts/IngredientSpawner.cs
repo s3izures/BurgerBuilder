@@ -4,16 +4,24 @@ using UnityEngine;
 
 public class IngredientSpawner : MonoBehaviour
 {
+    static public IngredientSpawner Instance;
     [SerializeField] private List<GameObject> spawnableIngredients;
 
-    void Start()
+    private void Awake()
     {
-        
+        if (!Instance)
+        {
+            Instance = this;
+        }
+        else if (Instance)
+        {
+            Destroy(this);
+        }
     }
 
-    
-    void Update()
+    public void GenerateRandomIngredient()
     {
-        
+        int ingType = Random.Range(0, spawnableIngredients.Count);
+        Instantiate(spawnableIngredients[ingType], transform);
     }
 }
