@@ -39,6 +39,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Bun
+    uniqueID: 55807517
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

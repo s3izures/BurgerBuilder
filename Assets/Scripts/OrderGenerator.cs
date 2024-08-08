@@ -34,18 +34,15 @@ public class OrderGenerator : MonoBehaviour
             if (i == 0)
             {
                 Instantiate(botBun, transform);
-                //Then add to list
             }
             else if (i < orderAmt - 1)
             {
                 int orderType = Random.Range(0, spawnableOrders.Count);
                 Instantiate(spawnableOrders[orderType], transform);
-                //Then add to list
             }
             else
             {
                 Instantiate(topBun, transform);
-                //Then add to list
             }
         }
     }
@@ -55,5 +52,10 @@ public class OrderGenerator : MonoBehaviour
         {
             Destroy(transform.GetChild(i).gameObject);
         }
+    }
+    public void RefreshOrder()
+    {
+        ClearOrder();
+        GenerateRandomOrder();
     }
 }

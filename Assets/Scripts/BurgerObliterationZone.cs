@@ -9,6 +9,7 @@ public class BurgerObliterationZone : MonoBehaviour
         if (collision.CompareTag("Ingredient"))
         {
             Destroy(collision.gameObject);
+            IngredientSpawner.Instance.GenerateRandomIngredient();
         }
     }
 }

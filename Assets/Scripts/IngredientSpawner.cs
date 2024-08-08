@@ -24,4 +24,11 @@ public class IngredientSpawner : MonoBehaviour
         int ingType = Random.Range(0, spawnableIngredients.Count);
         Instantiate(spawnableIngredients[ingType], transform);
     }
+    public void ClearIngredients()
+    {
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            Destroy(transform.GetChild(i).gameObject);
+        }
+    }
 }

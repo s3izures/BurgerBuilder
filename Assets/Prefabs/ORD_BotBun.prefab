@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7400138679679022052}
   - component: {fileID: 5996069475937594801}
   - component: {fileID: 794126303094535549}
+  - component: {fileID: 2568905059340390593}
   m_Layer: 5
   m_Name: ORD_BotBun
   m_TagString: Untagged
@@ -75,3 +76,17 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2568905059340390593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3369507288817469460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 893ad9be37dc09f45a9349d80c8b055d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 5
+  isOrder: 1

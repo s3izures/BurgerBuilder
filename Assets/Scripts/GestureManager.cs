@@ -6,6 +6,8 @@ public class GestureManager : MonoBehaviour
 {
     static public GestureManager Instance { get; private set; }
     [SerializeField] float touchTolerance = 25;
+    Vector2 startPosition = Vector2.zero;
+    Vector2 swipeDir = Vector2.zero;
 
     private void Awake()
     {
@@ -17,17 +19,10 @@ public class GestureManager : MonoBehaviour
         {
             Destroy(this);
         }
-
-        if (Instance == this)
-        {
-            DontDestroyOnLoad(gameObject);
-        }
     }
 
     public bool OnTap(Touch touch)
     {
-        Vector2 startPosition = Vector2.zero;
-
         if (touch.phase == TouchPhase.Began)
         {
             startPosition = touch.position;
@@ -37,7 +32,7 @@ public class GestureManager : MonoBehaviour
             float distance = (touch.position - startPosition).magnitude;
 
             // Check against a threshold to make sure they didnt move enough to be a swipe
-            if (distance < touchTolerance)
+            if (distance <= touchTolerance)
             {
                 Debug.Log("Tap!");
                 return true;
@@ -48,8 +43,6 @@ public class GestureManager : MonoBehaviour
     }
     public bool OnSwipe(Touch touch)
     {
-        Vector2 startPosition = Vector2.zero;
-
         if (touch.phase == TouchPhase.Began)
         {
             startPosition = touch.position;
@@ -59,8 +52,9 @@ public class GestureManager : MonoBehaviour
             float distance = (touch.position - startPosition).magnitude;
 
             // Counts as swipe if this distance is matched or exceeded
-            if (distance >= touchTolerance)
+            if (distance > touchTolerance)
             {
+                swipeDir = (touch.position - startPosition).normalized;
                 Debug.Log("Swipe!");
                 return true;
             }
@@ -68,9 +62,8 @@ public class GestureManager : MonoBehaviour
 
         return false;
     }
-    public Vector2 GetSwipeDir(Touch touch, Vector2 startPosition)
+    public Vector2 GetSwipeDir()
     {
-        Vector2 swipeDir = (touch.position - startPosition).normalized;
         return swipeDir;
     }
 }
