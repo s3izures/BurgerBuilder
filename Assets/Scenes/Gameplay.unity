@@ -122,6 +122,63 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &347148818
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 347148821}
+  - component: {fileID: 347148820}
+  - component: {fileID: 347148819}
+  m_Layer: 0
+  m_Name: Managers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &347148819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 347148818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af049576580065949b9f4ed1fafad0db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &347148820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 347148818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe7ce75d73eef48438ccdc1aae87ea4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &347148821
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 347148818}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 217.3883, y: 1297.622, z: -13.579748}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &374000730
 GameObject:
   m_ObjectHideFlags: 0
@@ -599,10 +656,11 @@ GameObject:
   - component: {fileID: 728425149}
   - component: {fileID: 728425151}
   - component: {fileID: 728425150}
+  - component: {fileID: 728425152}
   m_Layer: 0
-  m_Name: DeletionZone
+  m_Name: BurgerObliterationZone
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -615,7 +673,7 @@ Transform:
   m_GameObject: {fileID: 728425148}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.5713, y: -5.7712, z: -1}
+  m_LocalPosition: {x: 0, y: -6, z: -1}
   m_LocalScale: {x: 34.496517, y: 1.2421788, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -718,6 +776,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &728425152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 728425148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 594e718b5e9a4774c8d3991892e8f489, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &753986524
 GameObject:
   m_ObjectHideFlags: 0
@@ -1775,6 +1845,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 416894847}
   - {fileID: 2093363112}
-  - {fileID: 374000734}
   - {fileID: 989435263}
+  - {fileID: 347148821}
+  - {fileID: 374000734}
   - {fileID: 1795764046}
