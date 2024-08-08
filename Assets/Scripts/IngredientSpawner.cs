@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class IngredientSpawner : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] private List<GameObject> spawnableIngredients;
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         
