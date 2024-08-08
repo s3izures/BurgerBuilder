@@ -8,6 +8,11 @@ public class IngredientController : MonoBehaviour
     [SerializeField] float yeetForce = 1000;
     bool isActiveRightNow = true;
 
+    private void Start()
+    {
+        isActiveRightNow = false;
+        rb.simulated = false;
+    }
     private void Update()
     {
         if (Input.touchCount == 1 && isActiveRightNow)
