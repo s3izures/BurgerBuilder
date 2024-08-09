@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
         //Generate order and random ingredient
         OrderGenerator.Instance.GenerateRandomOrder();
         IngredientSpawner.Instance.GenerateRandomIngredient();
+        AddToList(IngredientType.Type.BottomBun, false);
 
         remark.enabled = false;
     }
@@ -145,7 +146,7 @@ public class GameManager : MonoBehaviour
         int muliplier = CheckListCorrects();
 
         remark.enabled = true;
-        if (muliplier == orderList.Count + 1)
+        if (muliplier >= orderList.Count)
         {
             remark.text = fantasticRemark;
         }
@@ -177,5 +178,6 @@ public class GameManager : MonoBehaviour
         OrderGenerator.Instance.RefreshOrder();
         IngredientSpawner.Instance.ClearIngredients();
         IngredientSpawner.Instance.GenerateRandomIngredient();
+        AddToList(IngredientType.Type.BottomBun, false);
     }
 }

@@ -288,10 +288,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   totalScore: {fileID: 1137332004}
   remark: {fileID: 114200303}
-  fantasticRemark: Perfect Job!
-  goodRemark: Uhh. FIne.
-  badRemark: You Kinda Suck.
-  godawfulRemark: nobody should have let you cook wtf is this
+  fantasticRemark: Perfect Job ^w^
+  goodRemark: Good :)
+  badRemark: You Kinda Suck ngl.
+  godawfulRemark: nobody should've let you cook what is this atrocity you have laid
+    before me
 --- !u!4 &347148821
 Transform:
   m_ObjectHideFlags: 0

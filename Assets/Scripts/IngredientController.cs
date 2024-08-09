@@ -10,7 +10,7 @@ public class IngredientController : MonoBehaviour
 
     private void Start()
     {
-        isActiveRightNow = false;
+        isActiveRightNow = true;
         rb.simulated = false;
     }
     private void Update()
@@ -36,6 +36,7 @@ public class IngredientController : MonoBehaviour
         //Finish burger
         if (GameManager.Instance.GetCurrentIngredient() == IngredientType.Type.TopBun && collision.gameObject.CompareTag("Ingredient") && isActiveRightNow)
         {
+            GameManager.Instance.AddToList(IngredientType.Type.TopBun, false);
             GameManager.Instance.SubmitBurger();
         }
         else if (collision.gameObject.CompareTag("Ingredient") && isActiveRightNow)
